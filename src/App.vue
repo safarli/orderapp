@@ -1,28 +1,68 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <ul>
+      <li>
+        <router-link
+          :to="{ name: 'home' }"
+          tag="a"
+          active-class="activenav"
+          exact
+          >Home</router-link
+        >
+      </li>
+      <li>
+        <router-link
+          :to="{ name: 'contact' }"
+          tag="a"
+          active-class="activenav"
+          exact
+          >Contact</router-link
+        >
+      </li>
+      <li>
+        <router-link
+          :to="{ name: 'orders' }"
+          tag="a"
+          active-class="activenav"
+          exact
+          >Orders</router-link
+        >
+      </li>
+    </ul>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+export default {};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  width: 60%;
+  margin: 0 auto;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+a {
+  color: #333;
+  border: 1px solid #000;
+  padding: 5px 10px;
+  background-color: greenyellow;
+  text-decoration: none;
+  font-family: "JetBrains Mono";
+  font-size: 18px;
+  font-weight: 600;
+}
+a:hover {
+  background-color: rgb(122, 180, 34);
+}
+
+.activenav {
+  background-color: rgb(134, 226, 80);
+  border-bottom: 4px solid #333;
 }
 </style>
