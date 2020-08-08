@@ -4,7 +4,7 @@
     <div class="msgbox">
       <p>
         You've ordered
-        <span style="font-weight: 700; color: red;">{{ selected }} </span>
+        <span style="font-weight: 700; color: red;">{{ basket }} </span>
       </p>
     </div>
     <h1>Orders page</h1>
@@ -42,14 +42,23 @@ export default {
       shadebox.style.display = "none";
     },
     addToBasket() {
-      this.basket.push(this.selected);
+      if (this.selected.length != 0) {
+        this.basket.push(this.selected);
+      } else {
+        alert("select an item first!");
+      }
     },
     checkout() {
       const msgbox = document.querySelector(".msgbox");
       const shadebox = document.querySelector(".shadebox");
-      msgbox.style.display = "flex";
-      shadebox.style.display = "block";
-      this.$store.commit("addOrder", this.basket);
+
+      if (this.basket.length != 0) {
+        this.$store.commit("addOrder", this.basket);
+        msgbox.style.display = "flex";
+        shadebox.style.display = "block";
+      } else {
+        alert("First fill up  your basket please!");
+      }
     },
   },
   computed: {

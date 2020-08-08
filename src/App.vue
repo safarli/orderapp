@@ -65,9 +65,9 @@ a {
   padding: 5px 10px;
   background-color: greenyellow;
   text-decoration: none;
-  font-family: "JetBrains Mono";
+  font-family: "Arial";
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
 }
 a:hover {
   background-color: rgb(122, 180, 34);
