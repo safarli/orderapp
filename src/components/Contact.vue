@@ -20,8 +20,8 @@ export default {};
 </script>
 
 <style scoped>
-  .contact-container{
-    width: 60%;
-    margin: 0 auto;
-  }
+.contact-container {
+  width: 60%;
+  margin: 0 auto;
+}
 </style>

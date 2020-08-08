@@ -28,8 +28,20 @@
           >Orders</router-link
         >
       </li>
+      <li>
+        <router-link
+          :to="{ name: 'trackOrders' }"
+          tag="a"
+          active-class="activenav"
+          exact
+        >
+          Track Orders
+        </router-link>
+      </li>
     </ul>
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
